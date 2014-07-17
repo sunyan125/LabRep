@@ -31,7 +31,7 @@ public class Jira {
 		}
 	}
 	
-	private static void writeFile(int i, String result) {
+	public static void writeFile(int i, String result) {
 		// TODO Auto-generated method stub
 		File dest = new File("F:/Hadoop Common/Jira/" + i +".html");
 		

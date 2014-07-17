@@ -38,7 +38,7 @@ public class GitHubUrl {
 	}
 
 	
-	private static void writeFile(int i, String result) {
+	public static void writeFile(int i, String result) {
 		// TODO Auto-generated method stub
 		File dest = new File("F:/Hadoop Common/GitUrl/" + i +".txt");
 		

@@ -21,9 +21,9 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-public class GitHubSubmit {
+public class TestGitHubSubmit {
 
-	public static void main(String[] args) throws ClientProtocolException, IOException, InterruptedException {
+	public static void main(String[] args) throws ClientProtocolException, IOException {
 		
 		ArrayList<String> fileList = getAllFiles();
 		ArrayList<String> url = new ArrayList<String>();
@@ -38,16 +38,15 @@ public class GitHubSubmit {
 					.substring(fileList.get(i).lastIndexOf("\\")+1).replace(".txt","_");
 			
 			for(int j=0; j<url.size(); j++){
-				
 				String urlLoc = url.get(j).substring(url.get(j).lastIndexOf("/")+1);
 				String fname = fileLoc + urlLoc;
-				String result = null;
 				
-				Thread.sleep(1000);
+				String result = null;
 				result = sendGet(url.get(j));
 				resultHtml.put(fname, result);
 				System.out.println(fname +"added in memory");
 			}
+			
 			writeFile(resultHtml);
 		}
 	}
